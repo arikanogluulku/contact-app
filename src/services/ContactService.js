@@ -1,24 +1,23 @@
 import axios from 'axios';
 
-const baseUrl = 'https://619393ead3ae6d0017da868c.mockapi.io/api/v1';
 export default class ContactService {
   getAll() {
-    return axios.get(`${baseUrl}/contacts`);
+    return axios.get(`${process.env.REACT_APP_API_BASE_ENDPOINT}/contacts`);
   }
 
   getContact(id) {
-    return axios.get(`${baseUrl}/contacts/${id}`);
+    return axios.get(`${process.env.REACT_APP_API_BASE_ENDPOINT}/contacts/${id}`);
   }
 
   deleteContact(id) {
-    return axios.delete(`${baseUrl}/contacts/${id}`);
+    return axios.delete(`${process.env.REACT_APP_API_BASE_ENDPOINT}/contacts/${id}`);
   }
 
   addContact(user) {
-    return axios.post(`${baseUrl}/contacts`, user);
+    return axios.post(`${process.env.REACT_APP_API_BASE_ENDPOINT}/contacts`, user);
   }
 
   updateContact(id, user) {
-    return axios.put(`${baseUrl}/contacts/${id}`, user);
+    return axios.put(`${process.env.REACT_APP_API_BASE_ENDPOINT}/contacts/${id}`, user);
   }
 }
