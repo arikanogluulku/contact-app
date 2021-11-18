@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import App from './App';
 import 'alertifyjs/build/css/alertify.css';
-import './index.scss';
+import './style/style.scss';
 
 ReactDOM.render(
   <React.StrictMode>
