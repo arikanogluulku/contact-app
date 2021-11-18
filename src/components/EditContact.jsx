@@ -36,12 +36,12 @@ function EditContact() {
   };
 
   return (
-    <Form className="mx-5" onSubmit={handleSubmit}>
-      <FormControlItem label="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <FormControlItem label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <FormControlItem label="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-      <FormControlItem label="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-      <FormControlItem label="Birthday" type="date" value={birthday} onChange={(e) => setBirthday(formatDate(e.target.value))} />
+    <Form className="mx-5 text-dark" onSubmit={handleSubmit}>
+      <FormControlItem label="Name" value={name || ''} onChange={(e) => setName(e.target.value)} />
+      <FormControlItem label="Email" type="email" value={email || ''} onChange={(e) => setEmail(e.target.value)} />
+      <FormControlItem label="Phone" value={phone || ''} onChange={(e) => setPhone(e.target.value)} />
+      <FormControlItem label="Address" value={address || ''} onChange={(e) => setAddress(e.target.value)} />
+      <FormControlItem label="Birthday" type="date" value={birthday || ''} onChange={(e) => setBirthday(formatDate(e.target.value))} />
       <Button variant="outline-success" type="submit">Edit</Button>
     </Form>
   );
