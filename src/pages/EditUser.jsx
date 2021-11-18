@@ -14,6 +14,7 @@ function EditUser() {
   useEffect(() => {
     dispatch(getContactSingle(id));
   }, []);
+
   return (
     <Container>
       <Row>
