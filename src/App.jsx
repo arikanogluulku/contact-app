@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <Container fluid="md" className="bg-light p-3 rounded-1 shadow overflow-auto " style={{ height: '70vh' }}>
+      <Container fluid="md" className="bg-light p-3 rounded-1 shadow overflow-auto bg-info" style={{ height: '70vh' }}>
         <Row className="mt-3">
           <Col>
             <Switch>
