@@ -1,7 +1,10 @@
+/* eslint-disable global-require */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.jsx'),
@@ -17,10 +20,27 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss|css$/,
+        test: /\.(scss|css)$/,
         use: [
-          'style-loader',
-          'css-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: true,
+              url: false,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  'autoprefixer',
+                ],
+              },
+            },
+          },
           'sass-loader',
         ],
       },
@@ -50,6 +70,10 @@ module.exports = {
       title: 'Contact App',
       template: path.resolve(__dirname, './public/index.html'),
     }),
+    new Dotenv({
+      path: './.env',
+    }),
+    new MiniCssExtractPlugin(),
   ],
   performance: {
     hints: false,
