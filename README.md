@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-👩‍💻 Live: https://arikanogluulku-contact-management-app.netlify.app/ emoh
+👩‍💻 Live: https://arikanogluulku-contact-management-app.netlify.app/ 
 
 I made use of mock.api.io in my project,  whose API I created myself, I upload my API 's there and handle all my CRUD operations by sending a request here.
 
